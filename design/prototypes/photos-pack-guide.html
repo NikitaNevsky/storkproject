@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stork · Pack фотографий — ChatGPT промпты</title>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Mulish',sans-serif;background:#F0E6D7;min-height:100vh;color:#383935;padding:40px 24px 80px}
+.wrap{max-width:920px;margin:0 auto}
+.hero{background:#383935;color:#fff;border-radius:20px;padding:28px;margin-bottom:24px}
+.hero h1{font-size:24px;font-weight:900;margin-bottom:8px}
+.hero p{font-size:14px;color:#C2C1BB;line-height:1.5}
+.hero p code{background:rgba(255,255,255,0.1);padding:2px 7px;border-radius:5px;color:#F7982B;font-size:12px}
+.steps{background:#fff;border:1px solid #EBDFCD;border-radius:18px;padding:22px;margin-bottom:24px}
+.steps h3{font-size:14px;font-weight:800;color:#9A8E78;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px}
+.steps ol{padding-left:22px}
+.steps li{font-size:14px;line-height:1.6;padding:4px 0}
+.steps li b{font-weight:800}
+.steps li code{background:#F0E6D7;padding:2px 6px;border-radius:4px;font-size:12px}
+.card{background:#fff;border:1px solid #EBDFCD;border-radius:16px;padding:18px;margin-bottom:14px}
+.card-head{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+.num{width:36px;height:36px;border-radius:11px;background:#F7982B;color:#383935;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;flex-shrink:0}
+.meta{flex:1}
+.fname code{background:#383935;color:#fff;padding:4px 9px;border-radius:6px;font-size:13px;font-weight:700;font-family:'SF Mono',monospace}
+.desc{font-size:14px;font-weight:700;color:#383935;margin-top:5px}
+.prio{font-size:11px;font-weight:800;padding:5px 11px;border-radius:999px;flex-shrink:0}
+.used{font-size:12px;color:#7A6E58;font-weight:600;padding:8px 0 12px;line-height:1.4}
+.prompt-box{background:#FBF6EE;border:1px solid #EBDFCD;border-radius:12px;padding:14px;position:relative}
+.prompt-box textarea{width:100%;border:none;background:transparent;font-family:'SF Mono','Courier New',monospace;font-size:12px;line-height:1.5;color:#383935;resize:none;min-height:80px;outline:none}
+.copy-btn{margin-top:9px;background:#F7982B;color:#383935;border:none;font-family:inherit;font-size:13px;font-weight:800;padding:9px 14px;border-radius:9px;cursor:pointer;transition:background 0.15s}
+.copy-btn:hover{background:#E48A1F}
+.copy-btn.done{background:#3B6D11;color:#fff}
+.note{background:#FFF1DA;border:1.5px solid #F7982B;border-radius:14px;padding:18px;margin-top:20px;font-size:13px;color:#854F0B;line-height:1.5}
+.note b{font-weight:800}
+</style>
+</head><body>
+<div class="wrap">
+
+<div class="hero">
+<h1>📸 Pack фотографий для Stork</h1>
+<p>15 промптов для ChatGPT/DALL-E. Стиль везде одинаковый — фотки выйдут как один комплект. Сохраняй с точными именами в папку <code>photos/</code>.</p>
+</div>
+
+<div class="steps">
+<h3>Как это работает</h3>
+<ol>
+<li>Открой <b>ChatGPT</b> (модель с DALL-E — GPT-4o или новее).</li>
+<li>Жми <b>«Копировать промпт»</b> на карточке. Вставляй в ChatGPT.</li>
+<li>Когда DALL-E сгенерил фото, сохрани под именем из карточки в папку <code>photos/</code>. PNG переименуй в <code>.jpg</code> — браузер съест.</li>
+<li>Если фото не нравится — пиши <b>«сделай вариант»</b> или <b>«ещё»</b>, получишь новый.</li>
+<li>Когда папка <code>photos/</code> заполнена — открывай любой HTML, фотки на местах.</li>
+</ol>
+</div>
+
+
+<div class="card">
+<div class="card-head">
+<div class="num">1</div>
+<div class="meta">
+<div class="fname"><code>croissant.jpg</code></div>
+<div class="desc">Круассан миндальный</div>
+</div>
+<span class="prio" style="background:#FCEBEB;color:#A32D2D">🔥 Critical</span>
+</div>
+<div class="used">📍 Главная (карточки, баннер), карточка товара hero, корзина, история заказа</div>
+<div class="prompt-box">
+<textarea id="p1" readonly>Professional food photography of a single fresh almond croissant with sliced almonds on top, on a white marble surface, soft natural light from upper left, 3/4 angle close-up, shallow depth of field, warm and inviting bakery aesthetic, square format 1024x1024</textarea>
+<button class="copy-btn" onclick="copyPrompt(1, this)">Копировать промпт</button>
+</div>
+</div>
+<div class="card">
+<div class="card-head">
+<div class="num">2</div>
+<div class="meta">
+<div class="fname"><code>coffee.jpg</code></div>
+<div class="desc">Капучино</div>
+</div>
+<span class="prio" style="background:#FCEBEB;color:#A32D2D">🔥 Critical</span>
+</div>
+<div class="used">📍 Сторис «Утро», главная (карточки), каталог, корзина</div>
+<div class="prompt-box">
+<textarea id="p2" readonly>Professional food photography of a cappuccino with delicate latte art rosette in a white ceramic cup with saucer, on a dark wooden table, soft natural light, top-down 3/4 angle, square format 1024x1024</textarea>
+<button class="copy-btn" onclick="copyPrompt(2, this)">Копировать промпт</button>
+</div>
+</div>
+<div class="card">
+<div class="card-head">
+<div class="num">3</div>
+<div class="meta">
+<div class="fname"><code>cinnamon-roll.jpg</code></div>
+<div class="desc">Синабон с корицей</div>
+</div>
+<span class="prio" style="background:#FCEBEB;color:#A32D2D">🔥 Critical</span>
+</div>
+<div class="used">📍 Главная (рекомендации), каталог, корзина</div>
+<div class="prompt-box">
+<textarea id="p3" readonly>Professional food photography of a freshly baked cinnamon roll with white sugar glaze drizzle on a small plate, white marble background, soft natural light from left, 3/4 angle, warm bakery aesthetic, square format 1024x1024</textarea>
+<button class="copy-btn" onclick="copyPrompt(3, this)">Копировать промпт</button>
+</div>
+</div>
+<div class="card">
+<div class="card-head">
+<div class="num">4</div>
+<div class="meta">
+<div class="fname"><code>cheese.jpg</code></div>
+<div class="desc">Сыр Маасдам</div>
+</div>
+<span class="prio" style="background:#FCEBEB;color:#A32D2D">🔥 Critical</span>
+</div>
+<div class="used">📍 Главная (скидки), каталог, сторис «Сыры», корзина</div>
+<div class="prompt-box">
+<textarea id="p4" readonly>Professional food photography of artisan Maasdam-style yellow cheese wedges arranged on a wooden board with grapes and walnuts, warm natural light, top-down 3/4 angle, square format 1024x1024</textarea>
+<button class="copy-btn" onclick="copyPrompt(4, this)">Копировать промпт</button>
+</div>
+</div>
+<div class="card">
+<div class="card-head">
+<div class="num">5</div>
+<div class="meta">
+<div class="fname"><code>food-spread.jpg</code></div>
+<div class="desc">Готовая еда (баннер)</div>
+</div>
+<span class="prio" style="background:#FCEBEB;color:#A32D2D">🔥 Critical</span>
+</div>
+<div class="used">📍 Баннер «Доставка бесплатно», сторис «Готовая еда»</div>
+<div class="prompt-box">
+<textarea id="p5" readonly>Professional food photography of a delicious healthy meal spread including bread, vegetables, salads, and dips arranged on a wooden table, soft natural light, top-down view, warm cafe aesthetic, square format 1024x1024</textarea>
+<button class="copy-btn" onclick="copyPrompt(5, this)">Копировать промпт</button>
+</div>
+</div>
+<div class="card">
+<div class="card-head">
+<div class="num">6</div>
+<div class="meta">
+<div class="fname"><code>bread.jpg</code></div>
+<div class="desc">Хлеб на закваске</div>
+</div>
+<span class="prio" style="background:#FAEEDA;color:#854F0B">⭐ Important</span>
+</div>
+<div class="used">📍 Каталог, корзина (для всех ti-bread)</div>
+<div class="prompt-box">
+<textarea id="p6" readonly>Professional food photography of fresh artisan sourdough bread loaves on a wooden cutting board, soft natural light, top-down 3/4 angle, warm rustic bakery aesthetic, square format 1024x1024</textarea>
+<button class="copy-btn" onclick="copyPrompt(6, this)">Копировать промпт</button>
+</div>
+</div>
+<div class="card">
+<div class="card-head">
+<div class="num">7</div>
+<div class="meta">
+<div class="fname"><code>latte.jpg</code></div>
+<div class="desc">Латте</div>
+</div>
+<span class="prio" style="background:#FAEEDA;color:#854F0B">⭐ Important</span>
+</div>
+<div class="used">📍 Главная (рекомендации), карточка товара</div>
+<div class="prompt-box">
+<textarea id="p7" readonly>Professional food photography of a latte with rosetta latte art in a tall clear glass cup on a warm wooden surface, soft natural light from left, side 3/4 angle, square format 1024x1024</textarea>
+<button class="copy-btn" onclick="copyPrompt(7, this)">Копировать промпт</button>
+</div>
+</div>
+<div class="card">
+<div class="card-head">
+<div class="num">8</div>
+<div class="meta">
+<div class="fname"><code>milk.jpg</code></div>
+<div class="desc">Молоко</div>
+</div>
+<span class="prio" style="background:#FAEEDA;color:#854F0B">⭐ Important</span>
+</div>
+<div class="used">📍 Каталог (молочное), корзина</div>
+<div class="prompt-box">
+<textarea id="p8" readonly>Professional food photography of a glass milk bottle filled with white milk, on a clean light background, soft natural light, simple minimal advertising style, square format 1024x1024</textarea>
+<button class="copy-btn" onclick="copyPrompt(8, this)">Копировать промпт</button>
+</div>
+</div>
+<div class="card">
+<div class="card-head">
+<div class="num">9</div>
+<div class="meta">
+<div class="fname"><code>berries.jpg</code></div>
+<div class="desc">Микс ягод (баннер)</div>
+</div>
+<span class="prio" style="background:#FAEEDA;color:#854F0B">⭐ Important</span>
+</div>
+<div class="used">📍 Баннер «−20% овощи и фрукты»</div>
+<div class="prompt-box">
+<textarea id="p9" readonly>Professional food photography of mixed fresh berries (strawberries, blueberries, raspberries) in a wooden bowl on a white marble surface, soft natural light, top-down angle, vibrant colorful composition, square format 1024x1024</textarea>
+<button class="copy-btn" onclick="copyPrompt(9, this)">Копировать промпт</button>
+</div>
+</div>
+<div class="card">
+<div class="card-head">
+<div class="num">10</div>
+<div class="meta">
+<div class="fname"><code>strawberries.jpg</code></div>
+<div class="desc">Клубника</div>
+</div>
+<span class="prio" style="background:#FAEEDA;color:#854F0B">⭐ Important</span>
+</div>
+<div class="used">📍 Сторис «Сезон», каталог</div>
+<div class="prompt-box">
+<textarea id="p10" readonly>Professional food photography of fresh red strawberries with green stems arranged on a white surface, soft natural light, top-down close-up angle, vibrant and fresh, square format 1024x1024</textarea>
+<button class="copy-btn" onclick="copyPrompt(10, this)">Копировать промпт</button>
+</div>
+</div>
+<div class="card">
+<div class="card-head">
+<div class="num">11</div>
+<div class="meta">
+<div class="fname"><code>eclair.jpg</code></div>
+<div class="desc">Эклеры мини</div>
+</div>
+<span class="prio" style="background:#FBF6EE;color:#7A6E58">Nice-to-have</span>
+</div>
+<div class="used">📍 Главная (скидки 2+1), каталог</div>
+<div class="prompt-box">
+<textarea id="p11" readonly>Professional food photography of an assortment of mini French eclairs with chocolate glaze on a white marble surface, soft natural light, top-down 3/4 angle, elegant patisserie aesthetic, square format 1024x1024</textarea>
+<button class="copy-btn" onclick="copyPrompt(11, this)">Копировать промпт</button>
+</div>
+</div>
+<div class="card">
+<div class="card-head">
+<div class="num">12</div>
+<div class="meta">
+<div class="fname"><code>bread-sliced.jpg</code></div>
+<div class="desc">Хлеб нарезанный</div>
+</div>
+<span class="prio" style="background:#FBF6EE;color:#7A6E58">Nice-to-have</span>
+</div>
+<div class="used">📍 Каталог (хлеб)</div>
+<div class="prompt-box">
+<textarea id="p12" readonly>Professional food photography of freshly baked rustic bread with several thick slices on a wooden board, soft natural light, side angle, warm bakery aesthetic, square format 1024x1024</textarea>
+<button class="copy-btn" onclick="copyPrompt(12, this)">Копировать промпт</button>
+</div>
+</div>
+<div class="card">
+<div class="card-head">
+<div class="num">13</div>
+<div class="meta">
+<div class="fname"><code>apple.jpg</code></div>
+<div class="desc">Яблоко</div>
+</div>
+<span class="prio" style="background:#FBF6EE;color:#7A6E58">Nice-to-have</span>
+</div>
+<div class="used">📍 Каталог (фрукты)</div>
+<div class="prompt-box">
+<textarea id="p13" readonly>Professional food photography of a single fresh red apple with a green leaf on top, on a clean white surface, soft natural light, side 3/4 angle, square format 1024x1024</textarea>
+<button class="copy-btn" onclick="copyPrompt(13, this)">Копировать промпт</button>
+</div>
+</div>
+<div class="card">
+<div class="card-head">
+<div class="num">14</div>
+<div class="meta">
+<div class="fname"><code>avatar-woman.jpg</code></div>
+<div class="desc">Аватар Анна</div>
+</div>
+<span class="prio" style="background:#F0E6D7;color:#5F5E5A">⚠ Stock проще</span>
+</div>
+<div class="used">📍 Профиль · графитовый hero</div>
+<div class="prompt-box">
+<textarea id="p14" readonly>Photorealistic portrait of a friendly woman in her late 20s with a warm smile, soft natural lighting, blurred cafe background, casual modern style, square format</textarea>
+<button class="copy-btn" onclick="copyPrompt(14, this)">Копировать промпт</button>
+</div>
+</div>
+<div class="card">
+<div class="card-head">
+<div class="num">15</div>
+<div class="meta">
+<div class="fname"><code>avatar-man.jpg</code></div>
+<div class="desc">Аватар Иван (курьер)</div>
+</div>
+<span class="prio" style="background:#F0E6D7;color:#5F5E5A">⚠ Stock проще</span>
+</div>
+<div class="used">📍 Отслеживание · карточка курьера</div>
+<div class="prompt-box">
+<textarea id="p15" readonly>Photorealistic portrait of a friendly young man in his late 20s with a warm smile, wearing a casual jacket, soft natural lighting, blurred urban background, square format</textarea>
+<button class="copy-btn" onclick="copyPrompt(15, this)">Копировать промпт</button>
+</div>
+</div>
+
+<div class="note">
+<b>⚠ По аватарам</b> — DALL-E плохо рисует реалистичные лица (либо отказывается, либо выглядит «AI-шно»). Проще найти на <b>Pexels.com</b> или <b>Unsplash.com</b>: ищи «friendly portrait woman» и «friendly portrait man», скачай, переименуй. Или взять фотку из своих/чьих-то соцсетей для демо.
+</div>
+
+</div>
+
+<script>
+function copyPrompt(n, btn){
+  const ta = document.getElementById('p'+n);
+  navigator.clipboard.writeText(ta.value).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = '✓ Скопировано';
+    btn.classList.add('done');
+    setTimeout(() => { btn.textContent = orig; btn.classList.remove('done'); }, 1800);
+  });
+}
+</script>
+</body></html>
